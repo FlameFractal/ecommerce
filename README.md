@@ -38,6 +38,7 @@ User features:
 * Top items.
 * Dynamic advertisement.
 * User accounts functionality.
+
 Admin features:
 * Add/edit/delete functionality for users, categories, products, orders and advertisements.
 
