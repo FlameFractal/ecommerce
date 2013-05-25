@@ -34,6 +34,9 @@ class Product(models.Model):
     stock = models.PositiveIntegerField(default=0)
     items_sold = models.PositiveIntegerField(default=0)
 
+    def __unicode__(self):
+        return u'%s - %s' % (self.name, self.slug)
+
     @property
     def unit_price_str(self):
         return "$%s" % self.price_in_dollars
@@ -165,6 +168,9 @@ class Payment(models.Model):
     expiry_date = models.DateField()
     card_code =  models.CharField(max_length=50)
 
+    def __unicode__(self):
+        return u'%s - %s' % (self.name_on_card, self.card_number)
+
 
 class Order(models.Model):
 
@@ -204,6 +210,9 @@ class Order(models.Model):
         product.items_sold = product.items_sold + quantity
         product.save()
 
+    def __unicode__(self):
+        return u'%s - %s' % (self.user, self.created_at)
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey('Order', related_name="items")
@@ -230,6 +239,8 @@ class Advertisement(models.Model):
     is_displayed = models.BooleanField(default=False)
     position = models.PositiveIntegerField(default=1)
 
+    def __unicode__(self):
+        return u'%s' % (self.owner)
 
 # class ProductDetail(models.Model):
 #     '''
