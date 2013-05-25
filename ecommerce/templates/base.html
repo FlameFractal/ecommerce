@@ -1,0 +1,44 @@
+{% extends "site_base.html" %}
+
+{% block body %}
+  <!-- Sidebar Navigation -->
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+
+          <li class="nav-header">
+             <a href="{% url products_all %}">All Products</a>
+          </li>
+
+          {% for category in menu_categories %}
+            <li class="nav-header">
+              <a href="{% url products_for_category category.slug %}">{{ category.name }}</a>
+              <ul>
+                  {% for child in category.sorted_children.all %}
+                  <li><a href="{% url products_for_category child.slug %}">{{ child.name }}</a></li>
+                  {% endfor %}
+              </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <legend>Our Partners:</legend>
+
+      {% for ad in advertisements %}
+        <div class="ad">
+          <a href="{{ ad.website }}" rel="tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ ad.slogan }}">
+            <img class="ad-image" src="{{ ad.image }}" alt="" />
+          </a>
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <!-- Main Area Of Page -->
+    <div class="span9">
+      {% block content %}{% endblock %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<legend>Your Shopping Cart</legend>
+
+{% if invalid_item %}
+  <div class="alert alert-error">
+    We're sorry, it seems that there are only {{ invalid_item.product.stock }} {{ invalid_item.product.name }} in stock.
+  </div>
+{% endif %}
+
+{% if formset %}
+
+<form action="" method="post">
+  {{ formset.management_form }}
+    {% csrf_token %}
+    <table class="table">
+      <thead>
+        <tr>
+            <th>Item</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Item Total</th>
+            <th>Remove</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for form in formset %}
+          {% with form.quantity as field %}
+            <tr>
+              <td>{{ form.instance.product.name }}</td>
+              <td>{{ form.instance.product.unit_price_str }}</td>
+              <td>
+                  {{ form.id }}
+                  {{ field.errors }}
+                  {{ field }}
+              </td>
+              <td>{{ form.instance.item_total_str }}</td>
+              <td>{{ form.DELETE }}</td>
+            </tr>
+          {% endwith %}
+        {% endfor %}
+
+        <tr>
+
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="4">&nbsp;</td>
+          <td><input class="btn" type="submit" value="Update Cart"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">&nbsp;</td>
+            <td><b>{% trans "Cart Total" %}</b></td>
+            <td><b>{{ request.session.cart_object.cart_total_str }}</b></td>
+          <td><a class="btn btn-success" href="{% url show_checkout %}">Checkout</a></td>
+        </tr>
+      </tfoot>
+    </table>
+
+</form>
+
+{% else %}
+    There are no items in your shopping cart.
+{% endif %}
+
+{% endblock %}

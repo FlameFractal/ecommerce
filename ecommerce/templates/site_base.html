@@ -1,0 +1,19 @@
+{% extends "theme_bootstrap/base.html" %}
+
+{% block extra_head_base %}
+    <link href="{{ STATIC_URL }}css/ecommerce.css" rel="stylesheet" media="screen">
+    {% block extra_head %}{% endblock %}
+{% endblock %}
+
+{% block footer %}
+    {% include "_footer.html" %}
+{% endblock %}
+
+{% block extra_body_base %}
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('[rel=tooltip]').tooltip();
+    });
+    </script>
+    {% block extra_body %}{% endblock %}
+{% endblock %}

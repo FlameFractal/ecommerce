@@ -1,0 +1,143 @@
+
+* {
+    font-family: inherit;
+    font-size: 100%;
+    font-style: normal;
+    font-weight: inherit;
+}
+
+.product-list, .order-list {
+    list-style: none outside none;
+}
+
+.product-item, .order-item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0 5px;
+    margin: 0;
+}
+
+.product-item .inner, .order_item.inner {
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+}
+
+.product-item .product-image {
+    height: 210px !important;
+    width: 200px !important;
+}
+
+.product-item .product-name,
+.order-item .product-name {
+    font-weight: bold;
+    line-height: 20px;
+    text-decoration:none;
+    color: inherit;
+}
+
+.row-fluid ul.thumbnails li.span3:nth-child(4n + 5) {
+    margin-left: 0px;
+}
+
+.row-fluid ul.gallery li.span2:nth-child(6n + 7) {
+    margin-left: 0px;
+}
+
+.row-fluid ul.thumbnails li.span12{
+    margin-left: 0px;
+}
+
+.product-media .product-preview {
+    width: 45%;
+    margin-right: 20px;
+}
+
+.product-media .product-image, .gallery-image {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #EEEEEE !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+    padding: 20px !important;
+    width: 90%;
+}
+
+.gallery-image {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #EEEEEE !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+    padding: 10px !important;
+    height: 170px;
+    width: 180px;
+}
+
+#image_modal {
+    display: none;
+    height: 90%;
+    width: auto;
+    /*position: fixed;*/
+    /*top: 20px;   */
+}
+
+#image_modal .modal-wrapper {
+    height: 100%;
+    padding: 15px;
+}   
+
+#image_modal .modal-image {
+    height: 90%;
+}
+
+#image_modal .close {
+    cursor: pointer;
+    height: 36px;
+    position: absolute;
+    right: -18px;
+    top: -18px;
+    width: 36px;
+    z-index: 8040;
+    background-image: url("../img/close_sprite.png");
+}
+
+.product-details .name {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.product-details .price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0.3em;
+}
+
+.product-details .description {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.product-details .tags a {
+    background: none repeat scroll 0 0 #CFCFCF;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    margin-right: 1px;
+    padding: 2px 7px;
+    cursor: pointer;
+    outline: medium none;
+    text-decoration: none;
+}
+
+.divider {
+    background-color: #E5E5E5;
+    border-bottom: 1px solid #FFFFFF;
+    height: 1px;
+    margin: 9px 1px;
+    overflow: hidden;
+}
+
+
+.pagination {
+    margin-top: 0px;
+}
+
+.ad {
+    margin: 5px 5px;
+}

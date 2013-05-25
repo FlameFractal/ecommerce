@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<legend>Your Orders</legend>
+
+<div class="row-fluid">
+    <ul class="thumbnails order-list">
+        {% for order in orders %}
+            <li class="order-item span12">
+                <p>Status: {{ order.get_status_display }}</p>
+                <p>Requested On: {{ order.created_at }}</p>
+                <div class="inner thumbnail">
+                    {% for order_item in order.items.all %}
+                        <div class="product media">
+                            <div class="preview pull-left">
+                                <a class="preview_anchor" href="{% url product_details order_item.product.slug %}">
+                                    <img class="preview_image" src="{{ order_item.product.photo }}" width="80" height="80" alt="" />
+                                </a>
+                            </div>
+
+                            <div class="details media-body">
+                                <p class="quantity">Quantity: {{ order_item.quantity }}</p>
+                                <p class="product-name">{{ order_item.product.name }}</p>
+                                <p class="description">{{ order_item.product.description }}</p>
+                            </div>
+                        </div>
+                        {% if not forloop.last %}
+                            <div class="divider"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </li>
+        {% empty %}   
+            <li id="no_items" class="span12">There are no orders to be displayed.</li>
+        {% endfor %}
+     </ul>
+</div>
+
+
+{% endblock %}

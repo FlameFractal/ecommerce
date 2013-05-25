@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="row-fluid">
+    <ul id="product-list" class="thumbnails product-list">
+        {% for product in product_list %}
+            <li class="product-item span3">
+                <div class="inner thumbnail">
+                    <a class="product_anchor" href="{% url product_details product.slug %}">
+                        <img class="product-image" src="{{ product.photo }}" alt="" />
+                    </a>
+                    <div class="caption product_content">
+                        <a href="#" rel="tooltip" class="product-name" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ product.name}}">{{ product.name|truncatechars:21 }}</a>
+
+                        <div>
+                            <a href="{% url product_details product.slug %}" class="btn btn-primary">Details</a>
+                            <a href="{% url add_to_cart product.id %}">
+                                <img src="{{ STATIC_URL }}img/add-to-cart.png" alt="" width="40px" height="40px" />
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% empty %}   
+            <li id="no_items" class="span12">There are no items to be displayed.</li>
+        {% endfor %}
+     </ul>
+</div>
+
+{% if product_list %}
+    <div class="row-fluid">
+        <div class="pagination">
+            <ul>
+                {% if product_list.has_previous %}
+                    <li><a href="?{% if criteria %}q={{criteria}}&amp;{% endif %}page=1">&laquo;&laquo;</a></li>
+                    <li><a href="?{% if criteria %}q={{criteria}}&amp;{% endif %}page={{ product_list.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><a href="#">&laquo;&laquo;</a></li>
+                    <li class="disabled"><a href="#">&laquo;</a></li>
+                {% endif %}
+
+                <li class="active"><a href="#">{{ product_list.number }}</a></li>
+
+                {% if product_list.has_next %}
+                    <li><a href="?{% if criteria %}q={{criteria}}&amp;{% endif %}page={{ product_list.next_page_number }}">&raquo;</a></li>
+                    <li><a href="?{% if criteria %}q={{criteria}}&amp;{% endif %}page={{ product_list.paginator.count }}">&raquo;&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><a href="#">&raquo;</a></li>
+                    <li class="disabled"><a href="#">&raquo;&raquo;</a></li>
+                {% endif %}
+              </ul>
+        </div>
+    </div>
+{% endif %}
+
+<legend>Top Items</legend>
+<div class="row-fluid">
+    <ul id="product-list" class="thumbnails product-list">
+        {% for product in top_products %}
+            <li class="product-item span3">
+                <div class="inner thumbnail">
+                    <a class="product_anchor" href="{% url product_details product.slug %}">
+                        <img class="product-image" src="{{ product.photo }}" alt="" />
+                    </a>
+                    <div class="caption product_content">
+                        <a href="#" rel="tooltip" class="product-name" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ product.name}}">{{ product.name|truncatechars:21 }}</a>
+
+                        <div>
+                            <a href="{% url product_details product.slug %}" class="btn btn-primary">Details</a>
+                            <a href="{% url add_to_cart product.id %}">
+                                <img src="{{ STATIC_URL }}img/add-to-cart.png" alt="" width="40px" height="40px" />
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% empty %}   
+            <li id="no_items" class="span12">There are no items to be displayed.</li>
+        {% endfor %}
+     </ul>
+</div>
+
+{% endblock %}

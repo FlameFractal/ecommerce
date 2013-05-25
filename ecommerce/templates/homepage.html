@@ -1,0 +1,19 @@
+{% extends "site_base.html" %}
+
+{% block body %}
+
+<div class="row-fluid">
+    <ul class="gallery">
+      {% for product in product_list %}
+      <li class="span2">
+            <div class="gallery-item">
+                <a class="gallery-anchor" href="{% url product_details product.slug %}">
+                  <img class="gallery-image" src="{{ product.photo }}" alt="" />
+                </a>
+            </div>
+        </li>
+    {% endfor %}
+     </ul>
+</div>
+
+{% endblock %}

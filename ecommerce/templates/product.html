@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% if product %}
+
+    <div class="product-media media">
+        <div class="product-preview pull-left">
+            <a href="#image_modal" data-toggle="modal">
+                <img class="product-image media-object" src="{{ product.photo }}" alt="" />
+            </a>
+        </div>
+
+        <div class="product-details media-body">
+            <h4 class="media-heading name">{{ product.name }}</h4>
+            <p class="size">{{ product.size }}</p>
+            <p class="price">{{ product.unit_price_str }}</p>
+            <a href="{% url add_to_cart product.id %}" class="btn btn-primary">Add to Cart</a>
+            <p class="description">{{ product.description }}</p>
+
+            <p class="tags">
+            {% for category in product.categories.all %}
+                <a href="{% url products_for_category category.slug %}">{{ category.name }}</a>
+            {% endfor %}
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="image_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-wrapper">
+            <img class="modal-image" src="{{ product.photo }}" alt="" />
+        </div>
+        <div class="close" data-dismiss="modal" aria-hidden="true"></div>
+    </div>
+
+{% else %}
+    <p>The product is not available.</p>
+{% endif %}
+
+
+<legend>Top Items</legend>
+<div class="row-fluid">
+    <ul id="product-list" class="thumbnails product-list">
+        {% for product in top_products %}
+            <li class="product-item span3">
+                <div class="inner thumbnail">
+                    <a class="product_anchor" href="{% url product_details product.slug %}">
+                        <img class="product-image" src="{{ product.photo }}" alt="" />
+                    </a>
+                    <div class="caption product_content">
+                        <a href="#" rel="tooltip" class="product-name" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ product.name}}">{{ product.name|truncatechars:21 }}</a>
+
+                        <div>
+                            <a href="{% url product_details product.slug %}" class="btn btn-primary">Details</a>
+                            <a href="{% url add_to_cart product.id %}">
+                                <img src="{{ STATIC_URL }}img/add-to-cart.png" alt="" width="40px" height="40px" />
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% empty %}   
+            <li id="no_items" class="span12">There are no items to be displayed.</li>
+        {% endfor %}
+     </ul>
+</div>
+
+
+{% endblock %}

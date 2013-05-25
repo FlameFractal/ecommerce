@@ -1,0 +1,450 @@
+[
+  {
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+      "domain": "art-prints.com", 
+      "name": "Art Prints"
+    }
+  },
+  {
+    "pk":1,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Art Prints",
+      "name":"Art Prints",
+      "parent":null,
+      "slug":"prints"
+    }
+  },
+  {
+    "pk":2,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Art Prints",
+      "name":"Framed Art Prints",
+      "parent":null,
+      "slug":"framed_prints"
+    }
+  },
+  {
+    "pk":3,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Tote Bages",
+      "name":"Tote Bages",
+      "parent":null,
+      "slug":"bags"
+    }
+  },
+  {
+    "pk":4,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Stationery Cards",
+      "name":"Stationery Cards",
+      "parent":null,
+      "slug":"cards"
+    }
+  },
+  {
+    "pk":5,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Humor",
+      "name":"Humor",
+      "parent":1,
+      "slug":"prints_humor"
+    }
+  },
+  {
+    "pk":6,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Movies",
+      "name":"Movies",
+      "parent":1,
+      "slug":"prints_movies"
+    }
+  },
+  {
+    "pk":7,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Illustration",
+      "name":"Illustration",
+      "parent":1,
+      "slug":"prints_illustration"
+    }
+  },
+  {
+    "pk":8,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Music",
+      "name":"Music",
+      "parent":1,
+      "slug":"prints_music"
+    }
+  },
+  {
+    "pk":9,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"People",
+      "name":"People",
+      "parent":1,
+      "slug":"prints_people"
+    }
+  },
+    {
+    "pk":10,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Illustration",
+      "name":"Illustration",
+      "parent":3,
+      "slug":"bags_illustration"
+    }
+  },
+  {
+    "pk":11,
+    "model":"ecommerce.category",
+    "fields":{
+      "description":"Children's",
+      "name":"Children's",
+      "parent":3,
+      "slug":"bags_children"
+    }
+  },
+  {
+    "pk":1,
+    "model":"ecommerce.product",
+    "fields":{
+      "price_in_dollars":"18.00",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "photo":"http://a1.s6img.com/cdn/box_006/post_16/747952_5961814_b.jpg",
+      "code":"1",
+      "slug":"print_tonari_no_totoro",
+      "categories":[
+        6, 7
+      ],
+      "name":"Tonari no Totoro",
+      "stock":"5",
+      "size": "MINI (8\" x 10\")"
+    }
+  },
+  {
+    "pk":2,
+    "model":"ecommerce.product",
+    "fields":{
+      "price_in_dollars":"29.00",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 2\" border for framing.",
+      "photo":"http://a1.s6img.com/cdn/0008/p/1935340_2178908_b.jpg",
+      "code":"2",
+      "slug":"print_all_of_time_and_space",
+      "categories":[
+        6, 7
+      ],
+      "name":"All of Time and Space",
+      "stock":"5",
+      "size": ""
+    }
+  },
+  {
+    "pk":3,
+    "model":"ecommerce.product",
+    "fields":{
+      "price_in_dollars":"16.00",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "photo":"http://a1.s6img.com/cdn/box_003/post_13/426742_11893483_b.jpg",
+      "code":"3",
+      "slug":"print_seinfeld",
+      "categories":[
+        6, 7, 8, 9
+      ],
+      "name":"Seinfeld",
+      "stock":"5",
+      "size": ""
+    }
+  },
+  {
+    "pk":4,
+    "model":"ecommerce.product",
+    "fields":{
+      "price_in_dollars":"40.00",
+      "description":"Feature artwork for our review of Japandroids' 2012 album \"Celebration Rock\". Digital Illustration. Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 2\" border for framing.",
+      "photo":"http://a1.s6img.com/cdn/0008/p/1538769_2250033_b.jpg",
+      "code":"4",
+      "slug":"print_japandroids_celebration_rock",
+      "categories":[
+        7, 8, 9 
+      ],
+      "name":"Japandroids - Celebration Rock",
+      "stock":"5",
+      "size": "MEDIUM (23\" X 16\")"
+    }
+  },
+  {
+    "pk":5,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Einstein",
+      "size": "SMALL (13\" X 18\")",
+      "price_in_dollars":"18.00",
+      "photo":"http://a1.s6img.com/cdn/box_001/post_11/224384_12645331_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "categories":[
+        7
+      ],
+      "slug":"print_einstein",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":6,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Electrick Girl",
+      "size": "SMALL (13\" X 13\")",
+      "price_in_dollars":"25.00",
+      "photo":"http://a1.s6img.com/cdn/0007/p/1011135_4719174_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "categories":[
+        6, 7, 9
+      ],
+      "slug":"print_electrick_girl",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":7,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Flight of the Elephants",
+      "size": "SMALL (13\" X 16\")",
+      "price_in_dollars":"24.00",
+      "photo":"http://a1.s6img.com/cdn/box_002/post_12/372459_12694369_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "categories":[
+        5, 7
+      ],
+      "slug":"print_flight_of_the_elephants",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":8,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Deluge",
+      "size": "MINI (8\" X 10\")",
+      "price_in_dollars":"20.00",
+      "photo":"http://a1.s6img.com/cdn/0011/p/3142669_2003765_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "categories":[
+        7, 9
+      ],
+      "slug":"print_deluge",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":9,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Jumbo Bubble Gum ",
+      "size": "Tote Bag / Natural Canvas Tote with Pocket",
+      "price_in_dollars":"18.00",
+      "photo":"http://a1.s6img.com/cdn/0008/v/1731432_14910413-bagtot01_b.jpg",
+      "description":"This canvas tote is made from 100% post-industrial recycled cotton, making it environmentally and socially responsible. The bag measures 13.5\" x 15.5\" with 5.5\" side & bottom gussets and 23\" x 1.5\" cotton web shoulder straps, which allow you to comfortably carry the bag either over the shoulder or as a tote. All seams and stress points are double stitched for durability, plus there's a pocket inside measuring 5.5\" x 6\".",
+      "categories":[
+        10, 11
+      ],
+      "slug":"bags_jumbo_bubble_gum",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":10,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"On how baby bears are often used as winter hats",
+      "size": "Tote Bag / Natural Canvas Tote with Pocket",
+      "price_in_dollars":"18.00",
+      "photo":"http://a1.s6img.com/cdn/0008/v/1814622_4760590-bagtot01_b.jpg",
+      "description":"This canvas tote is made from 100% post-industrial recycled cotton, making it environmentally and socially responsible. The bag measures 13.5\" x 15.5\" with 5.5\" side & bottom gussets and 23\" x 1.5\" cotton web shoulder straps, which allow you to comfortably carry the bag either over the shoulder or as a tote. All seams and stress points are double stitched for durability, plus there's a pocket inside measuring 5.5\" x 6\".",
+      "categories":[
+        10, 11
+      ],
+      "slug":"bags_on_how_baby_bears_are_often_used_as_winter_hats",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":11,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Big Bad Wolf",
+      "size": "LARGE (22\" X 22\")",
+      "price_in_dollars":"40.00",
+      "photo":"http://a1.s6img.com/cdn/0011/p/3438801_14866219_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 2\" border for framing.",
+      "categories":[
+        6, 7
+      ],
+      "slug":"print_big_bad_wolf",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":12,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"A French Ninja Cat",
+      "size": "MEDIUM (17\" X 22\")",
+      "price_in_dollars":"32.00",
+      "photo":"http://a1.s6img.com/cdn/box_006/post_16/952391_4382053_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 2\" border for framing.",
+      "categories":[
+        5, 7
+      ],
+      "slug":"print_french_ninja_cat",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":13,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"The Simpsons",
+      "size": "MINI (7\" X 10\")",
+      "price_in_dollars":"20.00",
+      "photo":"http://a1.s6img.com/cdn/0008/p/1903689_4427091_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "categories":[
+        5, 6
+      ],
+      "slug":"print_the_simpsons",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":14,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"The whisk wasn't the tallest",
+      "size": "SMALL (13\" X 16\")",
+      "price_in_dollars":"35.00",
+      "photo":"http://a1.s6img.com/cdn/box_004/post_14/510220_16744900_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "categories":[
+        5, 7
+      ],
+      "slug":"print_the_whisk_wasnt_the_tallest",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":15,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Coffee",
+      "size": "LARGE (22\" X 26\")",
+      "price_in_dollars":"42.00",
+      "photo":"http://a1.s6img.com/cdn/0010/p/2753370_10210227_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 2\" border for framing.",
+      "categories":[
+        5
+      ],
+      "slug":"print_coffee",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":16,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Moby",
+      "size": "SMALL (13\" X 17\")",
+      "price_in_dollars":"24.00",
+      "photo":"http://a1.s6img.com/cdn/0012/p/3922946_5286662_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "categories":[
+        6, 7
+      ],
+      "slug":"print_moby",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":17,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Procrastination",
+      "size": "SET OF 3 FOLDED CARDS (5\" X 7\")",
+      "price_in_dollars":"12.00",
+      "photo":"http://a1.s6img.com/cdn/0007/v/1449981_10951523-stscrd01_b.jpg",
+      "description":"Set of folded stationery cards printed on bright white, smooth card stock to bring your personal artistic style to everyday correspondence. Each card is blank on the inside and includes a soft white, European fold envelope for mailing.",
+      "categories":[
+        4
+      ],
+      "slug":"cards_procrastination",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":18,
+    "model":"ecommerce.product",
+    "fields":{
+      "name":"Summer of 1967",
+      "size": "MINI (8\" X 10\")",
+      "price_in_dollars":"16.00",
+      "photo":"http://a1.s6img.com/cdn/box_002/post_12/372787_14793084_b.jpg",
+      "description":"Gallery quality Giclée print on natural white, matte, ultra smooth, 100% cotton rag, acid and lignin free archival paper using Epson K3 archival inks. Custom trimmed with 1\" border for framing.",
+      "categories":[
+        5, 6
+      ],
+      "slug":"print_summer_of_1967",
+      "code":"4",
+      "stock":"5"
+    }
+  },
+  {
+    "pk":1,
+    "model":"ecommerce.advertisement",
+    "fields":{
+      "owner":"Prajitureasa",
+      "image":"http://victus.ro/wp-content/uploads/2011/06/praji1-660x439.jpg",
+      "slogan":"Prajitureasa - Va coace ceva!",
+      "website":"http://www.prajitureasa.ro/",
+      "is_displayed":true,
+      "position":2
+    }
+  },
+  {
+    "pk":2,
+    "model":"ecommerce.advertisement",
+    "fields":{
+      "owner":"Flowers Tea House",
+      "image":"http://designocalm.com/wp-content/uploads//2012/11/Flowers-tea-bar-Cluj-19.jpg",
+      "slogan":"Flowers Tea House",
+      "website":"https://www.facebook.com/flowers.teahouse",
+      "is_displayed":true,
+      "position":1
+    }
+  }
+]

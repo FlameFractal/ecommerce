@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<form action="" method="post" class="form-horizontal">
+    {% csrf_token %}
+    
+    <fieldset>
+
+    <legend>Payment Information</legend>
+    {{ payment_form.non_field_errors }}
+    
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_name_on_card">Name on Card:</label>
+        <div class="controls">  
+            {{ payment_form.name_on_card }}
+            {{ payment_form.name_on_card.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_card_number">Card Number:</label>
+        <div class="controls">  
+            {{ payment_form.card_number }}
+            {{ payment_form.card_number.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_expiry_date">Expiry Date:</label>
+        <div class="controls">  
+            {{ payment_form.expiry_date }}
+            {{ payment_form.expiry_date.errors }}           
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_card_code">Card Code:</label>
+        <div class="controls">  
+            {{ payment_form.card_code }}
+            {{ payment_form.card_code.errors }}
+        </div>
+    </div>
+
+
+    <legend>Shipping Information</legend>
+    {{ address_form.non_field_errors }}
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_email">Email:</label>
+        <div class="controls">  
+            {{ address_form.email }}
+            {{ address_form.email.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_first_name">First Name:</label>
+        <div class="controls">  
+            {{ address_form.first_name }}
+            {{ address_form.first_name.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_last_name">Last Name:</label>
+        <div class="controls">  
+            {{ address_form.last_name }}
+            {{ address_form.last_name.errors }}         
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_phone">Phone:</label>
+        <div class="controls">  
+            {{ address_form.phone }}
+            {{ address_form.phone.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_address">Address:</label>
+        <div class="controls">  
+            {{ address_form.address }}
+            {{ address_form.address.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_address2">Address2:</label>
+        <div class="controls">  
+            {{ address_form.address2 }}
+            {{ address_form.address2.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_city">City:</label>
+        <div class="controls">  
+            {{ address_form.city }}
+            {{ address_form.city.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_zip_code">Zip Code:</label>
+        <div class="controls">  
+            {{ address_form.zip_code }}
+            {{ address_form.zip_code.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_state">State:</label>
+        <div class="controls">  
+            {{ address_form.state }}
+            {{ address_form.state.errors }}
+        </div>
+    </div>
+
+    <div class="fieldWrapper control-group">
+        <label class="control-label" for="id_country">Country:</label>
+        <div class="controls">  
+            {{ address_form.country }}
+            {{ address_form.country.errors }}
+        </div>
+    </div>
+
+    <div class="address_form-actions">  
+        <button type="submit" class="btn btn-success">Place Order</button>  
+    </div>  
+
+    </fieldset>
+
+</form>
+
+{% endblock %}
